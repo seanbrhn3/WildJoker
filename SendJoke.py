@@ -12,6 +12,8 @@ SAMPLE_SPREADSHEET_ID = '1KVCzNbMt1U_cAUeSUw8Q_pExWDl89kDcmuMv38-5Fac'
 SAMPLE_RANGE_NAME = 'Class Data!A2:E'
 class Spreadsheet(object):
     entries = {}
+    google_values = []
+    amazon_values = []
     count = 1
     def add_values_google(self,values):
         store = file.Storage('token.json')
@@ -36,6 +38,7 @@ class Spreadsheet(object):
         # How the input data should be inserted.
         insert_data_option = 'INSERT_ROWS'  # TODO: Update placeholder value.
         vals = []
+        self.google_values.append(values['joke'])
         vals.append(values['joke'])
         value_range_body = {
             # TODO: Add desired entries to the request body.
@@ -69,6 +72,7 @@ class Spreadsheet(object):
         # How the input data should be inserted.
         insert_data_option = 'INSERT_ROWS'  # TODO: Update placeholder value.
         vals = []
+        self.amazon_values.append(values['joke'])
         vals.append(values['joke'])
         value_range_body = {
             # TODO: Add desired entries to the request body.

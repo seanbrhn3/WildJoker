@@ -2,8 +2,24 @@
 {%block body%}
 <h1>Team Amazon</h1>
 <p>I see you have chose the way for the Bezos this path is filled with Balled heads, no taxes and mistresses. Enjoy :)</p>
+<table class="table table-hover">
+  <thead>
+    <tr>
+
+      <th scope="col">Joke</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        {%for i in jokes%}
+          <td>{{i}}</td>
+        {%endfor%}
+    </tr>
+  </tbody>
+</table>
 <form action="" method="POST">
   Enter Joke: <input type="text" name="joke">
   <input type="submit">
 </form>
+<a href="{{url_for('index')}}">Home</a>
 {%endblock%}
